@@ -5,6 +5,7 @@ import {
     FLUSH,PAUSE,PERSIST,persistReducer,persistStore,PURGE,REGISTER,REHYDRATE
 } from "redux-persist"
 import storage from "redux-persist/lib/storage";
+import userSlice from "./user/userSlice";
 const persistConfig = {
     key: "root",
     version: 1,
@@ -13,7 +14,7 @@ const persistConfig = {
   
 
   const rootReducer = combineReducers({
-    
+    [userSlice.name]:userSlice.reducer
   
   });
   

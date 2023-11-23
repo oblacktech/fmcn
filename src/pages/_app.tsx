@@ -6,7 +6,7 @@ import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
 import { persistor, store } from "../store/store";
 import NextProgress from "next-progress";
-
+import "../styles/globals.css";
 
 export default function App({ Component, pageProps }: AppProps) {
     //@ts-ignore
