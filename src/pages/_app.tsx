@@ -9,11 +9,17 @@ import '../styles/globals.css'
 import { Toaster } from "react-hot-toast";
 import Header from "../components/Header";
 import React from "react";
+import Footer from "./Footer";
 
 export default function App({children}) {
     
     return(
-<Header/>
+        <>
+        <Header/>
+{children}
+<Footer/>
+        </>
+
 
 
 //         <Provider
