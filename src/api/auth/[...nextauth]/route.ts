@@ -1,14 +1,20 @@
 import NextAuth from 'next-auth'
 import GoogleProvider from 'next-auth/providers/google'
-
+import AtlassianProvider from 'next-auth/providers/atlassian'
 export const handler=NextAuth({
-   secret:"anysfklksdlksdmk",
+   
     providers:[
         GoogleProvider({
-    clientId:"363414656898-m3v1fcfdlovvgtu7rladqjrp87f72nnc.apps.googleusercontent.com",
+    clientId:process.env.GOOGLE_CLIENT_ID??"",
     
-    clientSecret:"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"
+    clientSecret:process.env.GOOGLE_CLIENT_SECRET??""
+}),
+AtlassianProvider({
+    clientId:process.env.GOOGLE_CLIENT_ID??"",
+    
+    clientSecret:process.env.GOOGLE_CLIENT_SECRET??""
 })
+
 
     ]
 
