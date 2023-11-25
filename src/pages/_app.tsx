@@ -2,24 +2,24 @@ import { Toaster } from "react-hot-toast";
 import "react-loading-skeleton/dist/skeleton.css";
 import { ToastContainer } from "react-toastify";
 import type { AppProps } from "next/app";
-import { Provider } from "react-redux";
-import { PersistGate } from "redux-persist/integration/react";
-import { persistor, store } from "../store/store";
+import {SessionProvider, SessionProviderProps } from "next-auth/react";
+
 import NextProgress from "next-progress";
 import "../styles/globals.css";
+import Providers from "@/context/providers";
 
 export default function App({ Component, pageProps }: AppProps) {
     //@ts-ignore
     const getLayout = Component.getLayout || ((page) => page);
   
     return (
-      <Provider store={store}>
-        <PersistGate loading={null} persistor={persistor}>
+      <Providers >
+       
         
           
                 {getLayout(<Component {...pageProps} />)}
              
-        </PersistGate>
+       
         <Toaster
           position="top-right"
           reverseOrder={false}
@@ -40,6 +40,6 @@ export default function App({ Component, pageProps }: AppProps) {
           color="#7378DE"
         />
         <ToastContainer />
-      </Provider>
+      </Providers>
     );
   }
