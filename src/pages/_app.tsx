@@ -6,7 +6,7 @@ import {SessionProvider, SessionProviderProps } from "next-auth/react";
 
 import NextProgress from "next-progress";
 import "../styles/globals.css";
-import Providers from "@/context/providers";
+import Providers from "@/context/Providers";
 
 export default function App({ Component, pageProps }: AppProps) {
     //@ts-ignore
